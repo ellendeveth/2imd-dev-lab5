@@ -12,7 +12,7 @@ app.use(express.json()); //json herkennen en bijvoegen op body
 app.use("/api/v1/messages", messagesRouter); //alles wat je op deze route binnenkrijgt, handel dat af binnen de Router
 
 app.get('/', (req, res) => {
-  res.render("index", {title: "nice", message:"hello"});
+  res.render("index", {title: "chat", message:"hello"});
 });
 
 
