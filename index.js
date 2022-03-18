@@ -1,9 +1,9 @@
 const express = require('express');
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 const logger = require("./middleware/logger"); //import / include met common js op basis van functies
 const messagesRouter = require("./routers/messages");
 
-mongoose.connect('mongodb://localhost:27017/chatapp');
+//mongoose.connect('mongodb://localhost:27017/chatapp');
 const app = express();
 const port = process.env.PORT || 3000;
 app.set('view engine', 'pug');
