@@ -4,7 +4,15 @@ const getAll = (req, res) => {
     // console.log(req.query); 
     const username = req.query.user;
     if(req.query.user){
-        res.send(username);
+        //res.send(username);
+        const response = {
+            status: "success",
+            data: {
+                "user": username,
+                "message": `getting message with username ${username}`,
+            }
+        }
+        res.json(response);
     } else {
 
     const response = {
@@ -54,10 +62,10 @@ const create = async (req, res) => {
     let username = req.body.username;
     let message = req.body.message;
 
-    let m = new Message();
-    m.username = username;
-    m.message = message;
-    await m.save();
+    // let m = new Message();
+    // m.username = username;
+    // m.message = message;
+    // await m.save();
 
     const response = {
         status: "success",
@@ -70,12 +78,27 @@ const create = async (req, res) => {
 }
 
 const update = (req, res) => {
-    res.send('updating messages');
+    //res.send('updating messages');
+    const id = req.params.id;
+    const response = {
+        status: "success",
+        data: {
+            "message": `updating message with id ${id}`,
+        }
+    }
+    res.json(response);
 };
 
 const del = (req, res) => {
     const id = req.params.id;
-    res.send(`deleting message with id ${id} `);
+    //res.send(`deleting message with id ${id} `);
+    const response = {
+        status: "success",
+        data: {
+            "message": `deleting message with id ${id}`,
+        }
+    }
+    res.json(response);
 }
 
 module.exports.getAll = getAll;
